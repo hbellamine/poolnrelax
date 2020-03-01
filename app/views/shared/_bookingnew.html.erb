@@ -7,7 +7,7 @@
             <div class="form-header">
               <h2 id="name"><%=@puppy.name %> <br>
               <p class="header-info header-first"><strong>Age: <%=@puppy.age %></strong> <br></p>
-              <p class="header-info"><strong>Breed: <%=@puppy.breed %></strong> <br></p>
+              <p class="header-info"><strong>Options: <%=@puppy.breed %></strong> <br></p>
               <p class="header-info"><strong>Price: <%=@puppy.price %> € per Day</strong><br></p>
               <p class="header-info"><strong>Location: <%=@puppy.location %></strong> <br></p>
             </div>
@@ -37,7 +37,10 @@
             <% if @booking.enddate != nil %>
               <h1>Price : <%= @puppy.price * (@booking.enddate - @booking.startdate).to_i %> € </h1>
             <%end%>
-            <%=f.submit "Book #{@puppy.name} 🐶", class: "book-button" %>
+
+
+            <%=f.submit "Book #{@puppy.name} ", class: "book-button" %>
+
           </form>
           <%end%>
         </div>
@@ -45,4 +48,9 @@
     </div>
   </div>
 </div>
+                              <% flash.each do |type, msg| %>
+                    <div class=" slideIn alert alert-secondary" role="alert">
+                      <%= msg %>
+                    </div>
+                  <% end %>
 

@@ -1,7 +1,7 @@
 <header>
   <div class="overlay"></div>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-    <source src="https://res.cloudinary.com/dnwnxu6xb/video/upload/v1582830560/ezgif.com-crop_hi7gb0.mp4" type="video/mp4">
+    <source src="https://res.cloudinary.com/dnwnxu6xb/video/upload/v1582981738/ezgif.com-video-cutter_z0tk5b.mp4" type="video/mp4">
   </video>
   <div class="container h-100" style="box-shadow: 2px 2px 5px gray;">
     <div class="d-flex h-100 text-center align-items-center">
@@ -9,17 +9,17 @@
       <div class="w-100 text-white">
 
         <h1 class="display-3"><strong>Heal yourself,</strong></h1>
-        <p class="lead mb-0"><strong>Book a Puppy</strong></p>
-         <div class="d-flex justify-content-center" style="margin-top: 20px;">
-     <%= form_tag(puppies_path, :method => "get") do %>
+        <p class="lead mb-0"><strong>Book a SWIMMING POOL </strong></p>
 
-    <%= search_field_tag :search, params[:search], placeholder: "Search for the cutest puppy", class: "form-control", style:"width:300px;" %>
+    </div>
+       <%= form_tag(puppies_path, :method => "get") do %>
+    <div class="d-flex" style="margin-top:20px;box-shadow: 2px 2px 5px lightgray;">
+        <div style="width:100%"><%= search_field_tag :search, params[:search], placeholder: "Search and Relax !", class: "form-control", style:"width:300px;height:60px;" %></div>
+          <div><%= button_tag "Search", :style => "background-color: #FF5A5F", :class => 'btn btn-primary glyphicon glyphicon-search', style: "background-color:#05A9F4;font-weight:bold;width:200px;height:60px;",:name => nil%></div>
+     </div>
     <%end%>
-      <%= button_tag "Search", :style => "background-color: #FF5A5F", :class => 'btn btn-primary glyphicon glyphicon-search',:name => nil%>
 
-  </div>
 
-      </div>
     </div>
   </div>
 </header>

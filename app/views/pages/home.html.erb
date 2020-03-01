@@ -4,15 +4,20 @@
 
 <div class ="containerhome">
   <div class ="homepicture1">
-    <%= image_tag("https://res.cloudinary.com/dnwnxu6xb/image/upload/v1582609530/CK5zurwKdUpRiy2o9G7fAtAY.jpg", class: "imagenewpuppyhome") %>
+    <%= image_tag("https://res.cloudinary.com/dnwnxu6xb/image/upload/v1582981837/bruce-christianson-86AN3JFiBsY-unsplash_tf5onz.jpg", class: "imagenewpuppyhome") %>
   </div>
   <div class ="text2">
-    <h2><i class="fas fa-dog"></i>  Check the best puppies available in town</h2> <br>
-    <h2><i class="fas fa-map-marked-alt"></i> Spot the closest puppy available </h2> <br>
-    <h2><i class="fas fa-laugh-beam"></i> Make your kids happy </h2><br>
-    <%= link_to "Book a puppy",puppies_path, class: "btn btn-danger", style: "margin-bottom:100px;" %>
+    <h2 style="color:#22737F"><i class="fas fa-thumbtack" style="color:#167FFB;"></i>  Spot the pools near you 📌</h2> <br>
+    <h2 style="color:#22737F"><i class="fas fa-calendar-alt" style="color:#167FFB;"></i> Book for the days you want 📆 </h2> <br>
+    <h2 style="color:#22737F"><i class="fas fa-cocktail" style="color:#167FFB;"></i> Pay safe and prepare your towel 🍸</h2><br>
+    <%= link_to "Book and Relax",puppies_path, class: "btn btn-primary", style: "margin-bottom:100px;" %>
   </div>
+
 </div>
+<div style ="background-color: #5EC4F3;">
+  <%= render partial: 'shared/puppyplay' %>
+
+  </div>
 
 <%= render 'shared/footer' %>
 

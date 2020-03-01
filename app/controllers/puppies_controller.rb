@@ -9,7 +9,7 @@ class PuppiesController < ApplicationController
 
     if params[:search]
 
-  @puppies = Puppy.search_by_name_and_breed(params[:search])
+  @puppies = Puppy.search_by_location_and_breed(params[:search])
   else
   @puppies = Puppy.all
   end
@@ -20,7 +20,7 @@ class PuppiesController < ApplicationController
         lat: puppy.latitude,
         lng: puppy.longitude,
          infoWindow: render_to_string(partial: "shared/info_window", locals: { puppy: puppy }),
-         image_url: helpers.asset_url('https://library.kissclipart.com/20181214/qhe/kissclipart-cute-dog-clipart-puppy-siberian-husky-labrador-ret-ee2b2f765d4306db.png')
+         image_url: helpers.asset_url('https://res.cloudinary.com/dnwnxu6xb/image/upload/v1582985080/240609_lhqk3a.svg')
       }
     end
   end
@@ -99,7 +99,7 @@ class PuppiesController < ApplicationController
           lat: @puppy.latitude,
           lng: @puppy.longitude,
            infoWindow: render_to_string(partial: "shared/info_window", locals: { puppy: @puppy }),
-           image_url: helpers.asset_url('https://res.cloudinary.com/dnwnxu6xb/image/upload/v1582892294/doggy_xob98s.png')
+           image_url: helpers.asset_url('https://res.cloudinary.com/dnwnxu6xb/image/upload/v1582985080/240609_lhqk3a.svg')
         }
 
   end

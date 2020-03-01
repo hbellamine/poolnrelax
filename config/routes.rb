@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :bookings, only: [:index, :destroy, :edit] # list all user bookings
+  resources :bookings, only: [:index, :destroy, :destroybyuser, :edit] # list all user bookings
 
 
 
