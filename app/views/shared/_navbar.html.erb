@@ -25,6 +25,7 @@
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <p class="dropdown-item" ><%= link_to '🍸 My swimmingpools', usermypuppies_path %></p>
           <p class="dropdown-item"><%= link_to '📆 My bookings', bookings_path %></p>
+          <p class="dropdown-item"><%= link_to '🗂 My Messages', conversations_path %></p>
           <% if policy(Puppy).create? %><p class="dropdown-item"> <%= link_to "🍸 Add a swimmingpool",new_puppy_path%></p><% end %>
           <p class="dropdown-item"><%= link_to ' Sign out', destroy_user_session_path, method: :delete %></p>
         </div>

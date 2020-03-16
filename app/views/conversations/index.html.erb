@@ -1,0 +1,28 @@
+ <h1> All conversations </h1>
+
+<div class="global" style="display:flex;">
+
+
+
+ <div style = " font-size: 30px; color: white; background-color: black; height: 100vh; width: 30vh;">
+  <h1 style="font-weight: bold"> Subjects </h1>
+ <% @conversation.each do |conversation| %>
+  <div>
+    📂<%= link_to conversation.subject, conversation_path(conversation) %>
+  </div>
+  <%end%>
+
+  </div>
+
+
+  <div style=" padding-left:20px;color:white;background-color: gray; height: 100vh; width:80vh;">
+
+    <%= render 'shared/newchat' %>
+  </div>
+
+
+
+
+</div>
+
+

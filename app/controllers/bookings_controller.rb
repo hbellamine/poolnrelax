@@ -60,6 +60,7 @@ end
   end
 
   def update
+    # @sess
   end
 
   def destroy

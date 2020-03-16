@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
 
+  resources :conversations do
+    resources :messages
+  end
 
   resources :bookings, only: [:index, :destroy, :destroybyuser, :edit] # list all user bookings
 

@@ -1,0 +1,175 @@
+#title{
+  padding-bottom: 10px;
+  padding-left:10px;
+  border-bottom: 0.2px solid lightgray;
+  font-size: 25px;
+}
+
+.chat{
+  flex-grow: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-input{
+  position: sticky;
+  bottom: 0px;
+}
+
+
+
+  .chat-conversation {
+ flex-grow: 1;
+  padding: 16px 0;
+  overflow: scroll;
+
+}
+
+
+.message-card{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.message-card img{
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    margin-right: 16px;
+    margin-left: 20px;
+}
+.message-card-txt {
+
+  padding-right: 20px;
+}
+
+.message-card-txt h1,p{
+
+
+/*  margin:0px;*/
+}
+
+.message-card-txt h1{
+font-size:15px;
+/*margin:0px;*/
+}
+
+.message-card-txt h2{
+/*margin-bottom: 0px;
+padding:0px;*/
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    align-items: flex-end;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+.messages{
+  background-color: #4B3949;
+  padding:10px;
+  padding-right:40px;
+}
+
+.messages h2{
+  font-size: 14px;
+  color: #A59CA4;
+  font-weight: lighter;
+
+}
+
+#chan{
+  display:flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color:white;
+  font-weight: bold;
+
+}
+
+#company{
+  font-size: 30px;
+  color:white;
+
+}
+.sidebars{
+  background-color: #261B25;
+  padding-top: 8px;
+  padding-right:20px;
+  padding-left: 10px;
+}
+
+.containerslack{
+  height:100vh;
+}/* TODO: slack layout */
+
+/* Importing Google fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+h3 {
+  font-size: 23px;
+}
+.padded {
+  padding: 30px 0;
+}
+
+.containerslack{
+  display:flex;
+  height:100vh;
+
+}
+
+#LW{
+color:white;
+font-size: 22px;
+background-color: #514851;
+padding:5px;
+text-align: center;
+border-radius: 5px;
+}
+
+#SL{
+  color:lightgray;
+  font-size: 22px;
+  background-color: #261B25;
+  padding:5px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#SL:hover{
+  color:white;
+
+}
+
+
+
+

@@ -18,6 +18,7 @@ gem 'pundit'
 gem 'omniauth-facebook'
 gem 'pg_search'
 gem 'animate-css-rails'
+gem 'mailboxer'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
