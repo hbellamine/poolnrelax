@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-12">
+      <%= simple_form_for(@pool) do |f| %>
+
+          <%= image_tag("https://res.cloudinary.com/dnwnxu6xb/image/upload/v1584451838/humphrey-muleba-dyj7RTs85Fs-unsplash_1_qdukzn.jpg", class: "imagenewpuppy", style:"width: 300px; margin-bottom:10px; align-items: center;") %>
+          <%= f.input :photo, as: :file %>
+          <%= f.input :name, :label =>"Description of the Swimming Pool" %>
+          <%= f.input :nbpeople, :label=> "Number of persons allowed" %>
+          <%= f.input :location, :label=>" Adress" %>
+          <%= f.input :price , :label=>"Daily renting price" %>
+          <%= f.input :option, :placeholder=>"Towels,Water,..." %>
+
+
+
+          <%=f.submit "Add the Swimming Pool", class:"btn btn-primary btn-block"%>
+    <%end%>
+
+  </div>
+</div>

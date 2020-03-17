@@ -1,6 +1,6 @@
         <% bookingspuppy  =[] %>
 
-        <% bookingsp = @allbookings.where(puppy_id: puppy.id) %>
+        <% bookingsp = @allbookings.where(pool_id: pool.id) %>
         <% if bookingsp.count > 1 then %>
           <% bookingsp.each do |booking| %>
             <% bookingspuppy << booking %>

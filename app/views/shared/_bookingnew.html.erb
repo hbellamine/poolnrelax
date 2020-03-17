@@ -3,16 +3,16 @@
     <div class="container animated bounceInLeft delay-15s">
       <div class="row">
         <div class="booking-form">
-          <div class="booking-bg" style="background-image: url('<%=cl_image_path @puppy.photo.key,height: 300, width: 400, crop: :fill, class: "img-show" %>')">
+          <div class="booking-bg" style="background-image: url('<%=cl_image_path @pool.photo.key,height: 300, width: 400, crop: :fill, class: "img-show" %>')">
             <div class="form-header">
-              <h2 id="name"><%=@puppy.name %> <br>
-              <p class="header-info header-first"><strong>Age: <%=@puppy.age %></strong> <br></p>
-              <p class="header-info"><strong>Options: <%=@puppy.breed %></strong> <br></p>
-              <p class="header-info"><strong>Price: <%=@puppy.price %> € per Day</strong><br></p>
-              <p class="header-info"><strong>Location: <%=@puppy.location %></strong> <br></p>
+              <h2 id="name"><%=@pool.name %> <br>
+              <p class="header-info header-first"><strong>Nb of people: <%=@pool.nbpeople %></strong> <br></p>
+              <p class="header-info"><strong>Options: <%=@pool.option %></strong> <br></p>
+              <p class="header-info"><strong>Price: <%=@pool.price %> € per Day</strong><br></p>
+              <p class="header-info"><strong>Location: <%=@pool.location %></strong> <br></p>
             </div>
           </div>
-          <%= simple_form_for [@puppy,@booking] do |f| %>
+          <%= simple_form_for [@pool,@booking] do |f| %>
           <form>
             <div class="row">
               <div class="col-md-6 text-center">
@@ -35,11 +35,11 @@
             <% end %>
             </div>
             <% if @booking.enddate != nil %>
-              <h1>Price : <%= @puppy.price * (@booking.enddate - @booking.startdate).to_i %> € </h1>
+              <h1>Price : <%= @pool.price * (@booking.enddate - @booking.startdate).to_i %> € </h1>
             <%end%>
 
 
-            <%=f.submit "Book #{@puppy.name} ", class: "book-button" %>
+            <%=f.submit "Book #{@pool.name} ", class: "book-button" %>
 
           </form>
           <%end%>

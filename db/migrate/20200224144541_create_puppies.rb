@@ -1,9 +1,9 @@
 class CreatePuppies < ActiveRecord::Migration[5.2]
   def change
-    create_table :puppies do |t|
+    create_table :pools do |t|
       t.string :name
-      t.integer :age
-      t.string :breed
+      t.integer :nbpeople
+      t.string :option
       t.integer :price
       t.boolean :availability
       t.references :user, foreign_key: true

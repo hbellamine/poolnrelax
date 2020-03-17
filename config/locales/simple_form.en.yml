@@ -25,7 +25,7 @@ en:
     #     password: 'No special characters, please.'
     # include_blanks:
     #   defaults:
-    #     age: 'Rather not say'
+    #     nbpeople: 'Rather not say'
     # prompts:
     #   defaults:
-    #     age: 'Select your age'
+    #     nbpeople: 'Select your nbpeople'

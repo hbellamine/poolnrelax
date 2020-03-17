@@ -12,7 +12,7 @@
         <p class="lead mb-0"><strong>Book a SWIMMING POOL </strong></p>
 
     </div>
-       <%= form_tag(puppies_path, :method => "get") do %>
+       <%= form_tag(pools_path, :method => "get") do %>
     <div class="d-flex" style="margin-top:20px;box-shadow: 2px 2px 5px lightgray;">
         <div style="width:100%"><%= search_field_tag :search, params[:search], placeholder: "Search and Relax !", class: "form-control", style:"width:300px;height:60px;" %></div>
           <div><%= button_tag "Search", :style => "background-color: #FF5A5F", :class => 'btn btn-primary glyphicon glyphicon-search', style: "background-color:#05A9F4;font-weight:bold;width:200px;height:60px;",:name => nil%></div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_01_181212) do
+ActiveRecord::Schema.define(version: 2020_03_17_090939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,14 +38,14 @@ ActiveRecord::Schema.define(version: 2020_03_01_181212) do
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "puppy_id"
+    t.bigint "pool_id"
     t.date "startdate"
     t.date "enddate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "bookrequest"
     t.boolean "destroybyuser", default: false
-    t.index ["puppy_id"], name: "index_bookings_on_puppy_id"
+    t.index ["pool_id"], name: "index_bookings_on_pool_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -112,10 +112,10 @@ ActiveRecord::Schema.define(version: 2020_03_01_181212) do
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
   end
 
-  create_table "puppies", force: :cascade do |t|
+  create_table "pools", force: :cascade do |t|
     t.string "name"
-    t.integer "age"
-    t.string "breed"
+    t.integer "nbpeople"
+    t.string "option"
     t.integer "price"
     t.boolean "availability"
     t.bigint "user_id"
@@ -125,16 +125,16 @@ ActiveRecord::Schema.define(version: 2020_03_01_181212) do
     t.float "latitude"
     t.float "longitude"
     t.string "picture"
-    t.index ["user_id"], name: "index_puppies_on_user_id"
+    t.index ["user_id"], name: "index_pools_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.integer "rating"
-    t.bigint "puppy_id"
+    t.bigint "pool_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["puppy_id"], name: "index_reviews_on_puppy_id"
+    t.index ["pool_id"], name: "index_reviews_on_pool_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -155,11 +155,11 @@ ActiveRecord::Schema.define(version: 2020_03_01_181212) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "puppies"
+  add_foreign_key "bookings", "pools"
   add_foreign_key "bookings", "users"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
-  add_foreign_key "puppies", "users"
-  add_foreign_key "reviews", "puppies"
+  add_foreign_key "pools", "users"
+  add_foreign_key "reviews", "pools"
 end

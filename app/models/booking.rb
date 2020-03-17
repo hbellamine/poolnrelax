@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
-  belongs_to :puppy
+  belongs_to :pool
 
   def start_time
   self.startdate

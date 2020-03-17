@@ -1,6 +1,6 @@
-<% if puppy.photo.attached? %>
-<%= cl_image_tag puppy.photo.key,crop: :fill, class: "avatar" %>
+<% if pool.photo.attached? %>
+<%= cl_image_tag pool.photo.key,crop: :fill, class: "avatar" %>
 <% end %>
-<h2><%= puppy.name %></h2>
-<p><%= puppy.location %></p>
-<p><%= puppy.price %> € / day</p>
+<h2><%= pool.name %></h2>
+<p><%= pool.location %></p>
+<p><%= pool.price %> € / day</p>

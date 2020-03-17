@@ -9,13 +9,13 @@
 require 'open-uri'
 
 
-puts 'Destroying all puppies...'
-Puppy.destroy_all
-puts 'Seeding fresh new puppies!'
+puts 'Destroying all pools...'
+Pool.destroy_all
+puts 'Seeding fresh new pools!'
 
 User.create!(email: 'abc@gmail.com', password: 'password')
 
-url = "https://dog.ceo/api/breed/hound/images"
+url = "https://dog.ceo/api/option/hound/images"
 open_url = open(url).read
 json_url = JSON.parse(open_url)
 photos_library = json_url["message"]
@@ -23,12 +23,12 @@ photos_library = json_url["message"]
 5.times do
 
 name = Faker::Creature::Dog.name
-age = rand(1..10)
-breed = Faker::Creature::Dog.breed
+nbpeople = rand(1..10)
+option = Faker::Creature::Dog.option
 price = rand(20..50)
 location = Faker::Address.street_address
 photo = photos_library.sample
 p photo
 
-Puppy.create!(name: name, age: age, breed: breed, price: price, user_id: 1, location: location, picture: photo)
+Pool.create!(name: name, nbpeople: nbpeople, option: option, price: price, user_id: 1, location: location, picture: photo)
 end

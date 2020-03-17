@@ -1,21 +1,21 @@
 class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking)
-    @puppies = Puppy.where(user_id: current_user)
-    authorize @puppies
+    @pools = Pool.where(user_id: current_user)
+    authorize @pools
   end
 
   def new
     @booking = Booking.new
-    @puppy = Puppy.find(params[:puppy_id])
+    @pool = Pool.find(params[:pool_id])
     authorize @booking
   end
 
   def create
     @booking = Booking.new(params_booking)
     @booking.user_id = current_user.id
-    @puppy = Puppy.find(params[:puppy_id])
-    @booking.puppy = @puppy
+    @pool = Pool.find(params[:pool_id])
+    @booking.pool = @pool
     @booking.bookrequest = false
     @date_start = @booking.startdate.strftime("%Y-%m-%d")
     @date_end = @booking.enddate.strftime("%Y-%m-%d")
@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
       arival_date = booking.startdate.strftime("%Y-%m-%d")
       leave_date = booking.enddate.strftime("%Y-%m-%d")
         if @date_start.between?(arival_date, leave_date) || @date_end.between?(arival_date, leave_date)
-          if booking.puppy_id == @booking.puppy_id
+          if booking.pool_id == @booking.pool_id
             found = true
           end
         end
@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
 
   authorize @booking
   if found == true
-    redirect_to puppy_path(@puppy), notice: "This pool is already booked in the period you want to book it.Try other dates(check the calendar)"
+    redirect_to pool_path(@pool), notice: "This pool is already booked in the period you want to book it.Try other dates(check the calendar)"
   else
 
     @booking.save
@@ -55,7 +55,7 @@ end
     #il faut envoyer le mail ici
     @booking.save
     authorize @booking
-    redirect_to usermypuppies_path
+    redirect_to usermypools_path
 
   end
 
@@ -71,7 +71,7 @@ end
       redirect_to bookings_path
     #Mail votre demande a été annulé
     else
-      redirect_to usermypuppies_path
+      redirect_to usermypools_path
       # le propriétaire de la piscine a annulé votre reservation
     end
 

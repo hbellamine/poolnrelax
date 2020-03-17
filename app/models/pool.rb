@@ -1,9 +1,9 @@
-class Puppy < ApplicationRecord
+class Pool < ApplicationRecord
   # geocoded_by :address
   # after_validation :geocode, if: :will_save_change_to_address?
   include PgSearch::Model
-   pg_search_scope :search_by_location_and_breed,
-    against: [:location, :breed],
+   pg_search_scope :search_by_location_and_option,
+    against: [:location, :option],
     using: {
       tsearch: { prefix: true }
     }
@@ -16,14 +16,14 @@ class Puppy < ApplicationRecord
 
 # def self.search(search)
 #   if search
-#     breed_type = Puppy.find_by(breed: search)
+#     breed_type = Pool.find_by(option: search)
 #     if breed_type
-#       self.where(breed: breed_type)
+#       self.where(option: breed_type)
 #     else
-#       @puppies = Puppy.all
+#       @pools = Pool.all
 #     end
 #   else
-#     @puppies = Puppy.all
+#     @pools = Pool.all
 #   end
 # end
   has_one_attached :photo

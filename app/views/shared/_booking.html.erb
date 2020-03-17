@@ -1,14 +1,14 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Book this puppy
+  Book this pool
 </button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-    <%= simple_form_for [@puppy,@booking] do |f| %>
+    <%= simple_form_for [@pool,@booking] do |f| %>
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Book this puppy</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">Book this pool</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

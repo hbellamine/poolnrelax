@@ -3,13 +3,13 @@
 <h1 style ="color:purple; margin-top: 20px; margin-bottom:20px;"> Pending booking requests </h1>
 
  <% @booking.each do |booking| %>
-    <% puppy = booking.puppy %>
+    <% pool = booking.pool %>
 
       <div class="animated fadeInLeftBig delay-2s card-product">
-        <%=link_to puppy_path(puppy), class: "image-container" do %>
-          <% if puppy.photo.attached? %>
+        <%=link_to pool_path(pool), class: "image-container" do %>
+          <% if pool.photo.attached? %>
             <div class="animated fadeInLeftBig image">
-              <%= cl_image_tag puppy.photo.key,height: 300, width: 400, crop: :fill, class: "img-rounded" %>
+              <%= cl_image_tag pool.photo.key,height: 300, width: 400, crop: :fill, class: "img-rounded" %>
             </div>
           <% else %>
             <div class="image">
@@ -18,7 +18,7 @@
           <% end %>
         <% end %>
       <div class="card-product-infos">
-        <h3><%= puppy.name %></h3>
+        <h3><%= pool.name %></h3>
         <h2 style="font-size: 16px;">From: <%= booking.startdate %></h2>
         <h2>Until: <%= booking.enddate %><h2>
         <h2> Number of days : <%= (booking.enddate - booking.startdate).to_i + 1 %></h2>
@@ -37,15 +37,15 @@
     <%end%>
 
 
-<h1 style ="color:purple; margin-top: 20px; margin-bottom:20px;" >My listed puppies</h1>
+<h1 style ="color:purple; margin-top: 20px; margin-bottom:20px;" >My listed pools</h1>
 
 
-    <% @puppies.each do |puppy| %>
-      <div class="card-product-mypuppies">
-        <%=link_to puppy_path(puppy), class: "image-container" do %>
-          <% if puppy.photo.attached? %>
+    <% @pools.each do |pool| %>
+      <div class="card-product-mypools">
+        <%=link_to pool_path(pool), class: "image-container" do %>
+          <% if pool.photo.attached? %>
             <div class="image">
-              <%= cl_image_tag puppy.photo.key,height: 300, width: 400, crop: :fill, class: "img-rounded" %>
+              <%= cl_image_tag pool.photo.key,height: 300, width: 400, crop: :fill, class: "img-rounded" %>
             </div>
           <% else %>
             <div class="image">
@@ -55,18 +55,18 @@
         <% end %>
 
            <div class="card-product-infos">
-            <h1 class="mypuppy-name"><%= puppy.name %></h1>
+            <h1 class="mypuppy-name"><%= pool.name %></h1>
             <p>
-              <% if policy(puppy).edit? %>
-                <%= link_to edit_puppy_path(puppy.id) do %>
-                  <h3 class="btn btn-default">Change puppy details</h3>
+              <% if policy(pool).edit? %>
+                <%= link_to edit_pool_path(pool.id) do %>
+                  <h3 class="btn btn-default">Change pool details</h3>
                 <% end %>
               <%end%>
             </p>
              <p>
-              <% if policy(puppy).destroy? %>
-                <%= link_to puppy_path(puppy.id), method: :delete do %>
-                  <h3 class="btn btn-default">Delete <%= puppy.name %></h3>
+              <% if policy(pool).destroy? %>
+                <%= link_to pool_path(pool.id), method: :delete do %>
+                  <h3 class="btn btn-default">Delete <%= pool.name %></h3>
                 <% end %>
               <%end%>
             </p>
@@ -76,7 +76,7 @@
 
         <% bookingspuppy  =[] %>
 
-        <% bookingsp = @allbookings.where(puppy_id: puppy.id) %>
+        <% bookingsp = @allbookings.where(pool_id: pool.id) %>
         <% if bookingsp.count > 1 then %>
           <% bookingsp.each do |booking| %>
             <% bookingspuppy << booking %>

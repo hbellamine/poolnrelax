@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'reviews/new'
   get 'reviews/create'
-  get 'users/puppies'
+  get 'users/pools'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   root to: 'pages#home'
@@ -15,8 +15,8 @@ Rails.application.routes.draw do
 
 
 
-  resources :puppies do
-    resources :bookings, only: [:new, :create] # create a booking for a particular puppy
+  resources :pools do
+    resources :bookings, only: [:new, :create] # create a booking for a particular pool
     resources :reviews, only: [:new, :create]
   end
 
@@ -24,13 +24,13 @@ Rails.application.routes.draw do
 
   resources :users do
 
-    resources :puppies, only: [:index, :new, :create]
+    resources :pools, only: [:index, :new, :create]
 
     # post ':id/bookings', to:'bookings#create', as: 'userbookings'
 
   end
 
-  get 'my_puppies', to: 'puppies#mypuppies' , as: 'usermypuppies'
+  get 'my_pools', to: 'pools#mypools' , as: 'usermypools'
 
-  # post '/puppies' => 'puppies#create'
+  # post '/pools' => 'pools#create'
 end

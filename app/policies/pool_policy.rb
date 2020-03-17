@@ -1,4 +1,4 @@
-class PuppyPolicy < ApplicationPolicy
+class PoolPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -13,7 +13,7 @@ class PuppyPolicy < ApplicationPolicy
     true
   end
 
-  def mypuppies?
+  def mypools?
     true
   end
 

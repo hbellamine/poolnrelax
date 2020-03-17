@@ -1,6 +1,6 @@
 
-<%= simple_form_for([puppy, review], remote: true) do |f| %>
+<%= simple_form_for([pool, review], remote: true) do |f| %>
   <%= f.input :content, label: "Content", style: "color: purple" %>
   <%= f.input :rating, collection: [1, 2, 3, 4, 5] %>
-  <%= f.submit "Rate #{puppy.name} 🐶", class: "book-button"%>
+  <%= f.submit "Rate #{pool.name} 🐶", class: "book-button"%>
 <% end %>

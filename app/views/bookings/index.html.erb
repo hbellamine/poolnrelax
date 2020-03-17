@@ -4,13 +4,13 @@
 
 
   <% @bookings.each do |booking| %>
-    <% puppy = Puppy.find(booking.puppy_id) %>
+    <% pool = Pool.find(booking.pool_id) %>
 
       <div class="card-product-booking" style="border-radius: 8px;">
 
-          <% if puppy.photo.attached? %>
+          <% if pool.photo.attached? %>
             <div class="image">
-              <%= cl_image_tag puppy.photo.key,height: 300, width: 400, crop: :fill, class: "img-rounded" %>
+              <%= cl_image_tag pool.photo.key,height: 300, width: 400, crop: :fill, class: "img-rounded" %>
             </div>
           <% else %>
               <div class="image">
@@ -24,13 +24,13 @@
 
 
                 <div class="card text-white bg-dark mb-3" style="max-width: 50rem; height: 345px;">
-                          <div class="card-header" style="color:white; font-family: 'Poppins'; font-weight: bold; font-size: 35px;"><%= puppy.name %></div>
+                          <div class="card-header" style="color:white; font-family: 'Poppins'; font-weight: bold; font-size: 35px;"><%= pool.name %></div>
                         <div class="card-body">
                             <h6 class="card-title"><strong style="color:gray;">Starting date: </strong><%= booking.startdate %></h6>
                             <h6><strong style="color:gray;">Ending date: </strong><%= booking.enddate %></h6>
                             <p class="card-text"><strong style="color:gray;">Number of days: </strong><%= (booking.enddate - booking.startdate).to_i + 1%> days</p>
-                            <p class="card-text"><strong style="color:gray;">Price per day: </strong><%= puppy.price.to_i %> €/day</p>
-                            <p class="card-text"><strong style="color:gray;">Total: </strong><%= ((booking.enddate - booking.startdate).to_i) * puppy.price.to_i %> €</p>
+                            <p class="card-text"><strong style="color:gray;">Price per day: </strong><%= pool.price.to_i %> €/day</p>
+                            <p class="card-text"><strong style="color:gray;">Total: </strong><%= ((booking.enddate - booking.startdate).to_i) * pool.price.to_i %> €</p>
 
 
                             <p><% if policy(booking).destroy? %>
